@@ -1,4 +1,4 @@
-# Grindset
+# GRINDSET
 
 ### Collection of Competitive Programming Solutions
 
