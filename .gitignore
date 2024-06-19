@@ -1,0 +1,14 @@
+*
+
+# messed up the build directory
+!*/
+!*.cpp
+!*.h
+!*.gitignore
+!*.md
+
+# vscode
+.vscode
+
+# template lol
+hanoi.cpp
