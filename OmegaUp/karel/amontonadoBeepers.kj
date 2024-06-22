@@ -1,0 +1,41 @@
+class program {
+
+    void pickLine() {
+    	while(nextToABeeper()) {
+        	while(nextToABeeper()) {
+            	pickbeeper();
+            }
+            if(frontIsClear()) {
+            	move();
+            }
+        }
+    }
+    
+    void comeBack(){
+    	turnleft();
+        turnleft();
+        while(frontIsClear()) {
+        	move();
+        }
+    }
+    
+    void clearBackpack(){
+        while(anyBeepersInBeeperBag()) {
+        	putbeeper();
+        }
+    }
+    
+    program () {
+        
+        while(nextToABeeper() && frontIsClear()) {
+          pickLine();
+          comeBack();
+          clearBackpack();
+          turnleft();
+          move();
+          turnleft();
+        }
+        
+        turnoff();
+    }
+}
