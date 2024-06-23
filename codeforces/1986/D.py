@@ -12,7 +12,7 @@ def solve():
 
     for stdn_index in range(n-1):
         
-        final_expression = ""
+        final_expression = 0
 
         for i in range(n):
 
@@ -37,12 +37,12 @@ def solve():
                 print(0)
                 return
 
-            final_expression += num + "+"  
+            final_expression += int(num)
 
-        if len(final_expression) == 0:
-            final_expression = '1+'
+        if final_expression == 0:
+            final_expression = 1
 
-        ans = min(ans, eval(final_expression[:-1]))
+        ans = min(ans, final_expression)
     
     print(ans)
     
