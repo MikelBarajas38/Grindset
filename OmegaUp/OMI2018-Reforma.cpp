@@ -20,5 +20,19 @@ int main() {
         cin >> e;
     }
 
+    int current_sequence = 0, longest_sequence = 0;
+    for(int i = 1; i < n; ++i) {
+        if(edificios[i] < edificios[i - 1]) {
+            current_sequence++;
+        } else {
+            longest_sequence = max(longest_sequence, current_sequence);
+            current_sequence = 0;
+        }
+    }
+
+    longest_sequence = max(longest_sequence, current_sequence);
+
+    cout << longest_sequence + 1 << '\n';
+
     return 0;
 }
