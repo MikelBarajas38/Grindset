@@ -43,8 +43,6 @@ int main() {
         max_sum += i;
     }
 
-    is_valid_max_sum(7, k);
-
     ll l = 0;
     ll r = max_sum;
 
