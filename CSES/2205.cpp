@@ -8,6 +8,13 @@ typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
 
+void print_binary(int n, int len) {
+    for(int i = len - 1; i >= 0; --i) {
+        cout << (n & (1 << i) ? 1 : 0);
+    }
+    cout << endl;
+}
+
 int main() {
 	cin.tie(0)->sync_with_stdio(0);
 	cin.exceptions(cin.failbit);
@@ -15,10 +22,10 @@ int main() {
     int n;
     cin >> n;
 
-    n = 1 << n; 
-    for(int i = 0; i < n; i++) {
-
-        printf("%b\n", i);
+    int lim = 1 << n; 
+    for(int i = 0; i < lim; i++) {
+        int s = i ^ i >> 1;
+        print_binary(s, n);
     }
 
     return 0;
