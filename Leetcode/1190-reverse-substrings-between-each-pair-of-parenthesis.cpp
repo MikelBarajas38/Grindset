@@ -4,6 +4,46 @@ using namespace std;
 class Solution {
 public:
 
+    void reverse_substrings(string &s, string &out, int l, int r, bool reverse) {
+
+        while(l <= r) {
+
+            if (reverse) {
+                if(s[r] == ')') {
+                    int next_l = l;
+                    while(s[next_l] != '(') {
+                        next_l++;
+                    }
+                    reverse_substrings(s, out, next_l+1, r-1, !reverse);
+                    r = next_l-1;
+                } else {
+                    out += s[r];
+                    r--;
+                }
+            } else {
+                if(s[l] == '(') {
+                    int next_r = r;
+                    while(s[next_r] != ')') {
+                        next_r--;
+                    }
+                    reverse_substrings(s, out, l+1, next_r-1, !reverse);
+                    l = next_r+1;
+                } else {
+                    out += s[l];
+                    l++;
+                }
+            }
+        }
+
+    }
+
+    string reverseParenthesesBad(string s) {
+        int n = s.size();
+        string out = "";
+        reverse_substrings(s, out, 0, n-1, false);
+        return out;
+    }
+
     string reverseParentheses(string s) {
         
         int n = s.size();
@@ -39,6 +79,7 @@ public:
         return out;
 
     }
+
 };
 int main() {
 
