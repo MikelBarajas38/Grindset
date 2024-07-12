@@ -42,7 +42,7 @@ public:
 
 int main() {
     Solution s;
-    cout << s.maximumGain("ababab", 1, 3) << endl;
-    cout << s.maximumGain("cdbcbbaaabab", 4, 5) << endl;
+    cout << s.maximumGain("ababab", 1, 3) << '\n';
+    cout << s.maximumGain("cdbcbbaaabab", 4, 5) << '\n';
     return 0;
 }
