@@ -40,7 +40,6 @@ public:
             roots.push_back(root);
         }
 
-
         dfs(&root, deleted, roots);
 
         return roots;
