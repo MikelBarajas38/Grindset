@@ -86,13 +86,13 @@ int main() {
     Solution s;
 
     string str = "(u(love)i)";
-    cout << s.reverseParentheses(str) << endl;
+    cout << s.reverseParentheses(str) << '\n';
 
     string str2 = "(ed(et(oc))el)";
-    cout << s.reverseParentheses(str2) << endl;
+    cout << s.reverseParentheses(str2) << '\n';
 
     string str3 = "a(bcdefghijkl(mno)p)q";
-    cout << s.reverseParentheses(str3) << endl;
+    cout << s.reverseParentheses(str3) << '\n';
 
     return 0;
 }

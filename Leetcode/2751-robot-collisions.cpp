@@ -164,5 +164,5 @@ int main() {
     for(int &x : res) {
         cout << x << " ";
     }
-    cout << endl;
+    cout << '\n';
 }

@@ -95,8 +95,8 @@ int main() {
 
     Solution s;
     vector<int> result = s.nodesBetweenCriticalPoints(head);
-    cout << "Min distance: " << result[0] << endl;
-    cout << "Max distance: " << result[1] << endl;
+    cout << "Min distance: " << result[0] << '\n';
+    cout << "Max distance: " << result[1] << '\n';
 
     return 0;
 

@@ -88,9 +88,9 @@ int main() {
     vector<int> ans = s.sortArray(nums);
 
     for(int x : ans) {
-        cout << x << " ";
+        cout << x << ' ';
     }
-    cout << endl;
+    cout << '\n';
 
     return 0;    
 

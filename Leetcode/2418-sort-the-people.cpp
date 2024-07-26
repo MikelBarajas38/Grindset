@@ -51,5 +51,5 @@ int main() {
     for(string &name : sorted_names) {
         cout << name << " ";
     }
-    cout << endl;
+    cout << '\n';
 }
