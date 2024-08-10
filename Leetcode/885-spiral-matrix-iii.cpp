@@ -30,7 +30,8 @@ public:
             } else { 
                 offset = (offset + 1) % 4;
                 dist = 1;
-                turn_dist = (offset == 2 || offset == 0) ? turn_dist + 1: turn_dist;
+                //turn_dist = (offset == 2 || offset == 0) ? turn_dist + 1: turn_dist;
+                turn_dist = offset % 2 ? turn_dist: turn_dist + 1;
             }
 
             i += di[offset];
