@@ -10,6 +10,9 @@ typedef vector<int> vi;
 
 void solve() {
 
+    int n, k;
+    cin >> n >> k;
+
     
     
 } 
