@@ -10,13 +10,10 @@ typedef pair<int, int> pii;
 typedef vector<int> vi;
 typedef vector<ll> vll;
 
-void path(const vll &nums, vector<bool> &used, vll &first, int target, vll &p) {
+void path(const vll &nums, vector<bool> &used, vll &first, int target) {
+    
     if (target == 0) return;
     ll to_find = target - first[target];
-    
-    p.push_back(first[target]);
-
-    
     for (int i = 0; i < nums.size(); ++i) {
         if (nums[i] == first[target] && !used[i]) {
             used[i] = 1;
@@ -24,7 +21,6 @@ void path(const vll &nums, vector<bool> &used, vll &first, int target, vll &p) {
         }
     }
     
-    path(nums, used, first, to_find, p);
 }
 
 int main() {
@@ -42,8 +38,6 @@ int main() {
         sum += x;
     }
 
-    sort(nums.begin(), nums.end());
-
     if (sum % 2) {
         cout << "-1\n";
         return 0;
@@ -59,7 +53,7 @@ int main() {
 
     for(ll k = 0; k < n; k++) {
         for(ll x = target; x >= 0; x--) {
-            if(possible[x]) { 
+            if(possible[x] && !possible[x+nums[k]]) { 
                 possible[x+nums[k]] = true;
                 first[x+nums[k]] = nums[k];
             }
@@ -69,8 +63,7 @@ int main() {
     if(possible[target]) {
 
         vector<bool> used(n);
-        vll p;
-        path(nums, used, first, target, p);
+        path(nums, used, first, target);
         
         vll alice, bob;
         for(int i = nums.size() - 1; i >= 0; --i) {
