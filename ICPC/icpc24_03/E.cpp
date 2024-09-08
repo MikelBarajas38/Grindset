@@ -23,19 +23,17 @@ int main() {
         }
     }
 
-    bool d, r;
+    bool r = matrix[0][0] < matrix[0][1];
+    bool c = matrix[0][0] < matrix[1][0];
 
-    r = matrix[0][0] < matrix[0][1];
-    d = matrix[0][0] < matrix[1][0];
-
-    if (d && r)
+    if (r && c)
         cout << "0\n";
-    else if (d && !r)
+    else if (c)
         cout <<"1\n";
-    else if (!d && !r)
-        cout << "2\n";
-    else
+    else if (r)
         cout << "3\n";
+    else
+        cout << "2\n";
 
     return 0;
 }

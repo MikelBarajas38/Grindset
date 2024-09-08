@@ -18,10 +18,8 @@ int main() {
     ll num = 1, den = 1;
 
     while(N--) {
-
         num += den;
-        swap(num, den);  
-
+        swap(num, den); 
     }
 
     cout << num << "\n";

@@ -20,7 +20,7 @@ void path(const vll &nums, vector<bool> &used, vll &first, int target) {
             break;
         }
     }
-    
+    path(nums, used, first, to_find);
 }
 
 int main() {
