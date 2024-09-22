@@ -16,6 +16,7 @@ int main() {
 	cin.exceptions(cin.failbit);
 
     vector<ll> strategy_1(MAX + 1, 0);
+    vector<ll> strategy_2(MAX + 1, 0);
 
     for(ll i = 1; i <= MAX; ++i) {
         
@@ -27,10 +28,13 @@ int main() {
         }
 
         strategy_1[i] = strategy_1[i - 1];
+        strategy_2[i] = strategy_2[i - 1];
 
         if(prod > sum) {
             strategy_1[i]++;
-        } 
+        } else if (prod < sum) {
+            strategy_2[i]++;
+        }
 
     }
 
@@ -42,7 +46,7 @@ int main() {
         cin >> a >> b;
         
         ll strat_1_val = strategy_1[b] - strategy_1[a - 1];
-        ll strat_2_val = b - a + 1 - strat_1_val;
+        ll strat_2_val = strategy_2[b] - strategy_2[a - 1];
 
         cout << strat_1_val << ' ' << strat_2_val << '\n';
     }
