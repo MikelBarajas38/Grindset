@@ -8,10 +8,19 @@ typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
 
+int get_min_cost(int i, int k, vector<int> &h, vector<int> &dp) {
+    int min_cost = INT_MAX;
+    for(int j = i - 1; j >= 0 && i - j <= k; j--) {
+        int cost = dp[j] + abs(h[i] - h[j]);
+        min_cost = min(min_cost, cost);
+    }
+    return min_cost;
+}
+
 void solve() {
 
-    int n;
-    cin >> n;
+    int n, k;
+    cin >> n >> k;
 
     vector<int> h(n);
 
@@ -22,12 +31,9 @@ void solve() {
     vector<int> dp(n);
 
     dp[0] = 0;
-    dp[1] = abs(h[0] - h[1]);
 
-    for(int i = 2; i < n; ++i) {
-        int cost_a = dp[i - 2] + abs(h[i] - h[i - 2]);
-        int cost_b = dp[i - 1] + abs(h[i] - h[i - 1]);
-        dp[i] = min(cost_a, cost_b);
+    for(int i = 1; i < n; ++i) {
+        dp[i] = get_min_cost(i, k, h, dp);
     }
 
     cout << dp[n-1] << '\n';
