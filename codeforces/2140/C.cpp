@@ -51,7 +51,7 @@ void solve() {
     ll best_neg_move = 0;
     for(ll i = 0; i < n; ++i) {
         if(i % 2 == 1) {
-            ll score = initial_f + 2 * a[i] - 2 * best_a + abs(best_a_i - i);
+            ll score = initial_f + 2 * a[i] - 2 * a[i] + abs(best_a_o);
             max_score = max(max_score, score);
         }
     }
